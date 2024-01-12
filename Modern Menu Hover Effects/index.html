@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Menu Item Hover Effect</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <ul>
+        <li><a href="#" data-text="Home"><img src="img/img1.jpg">Home</a></li>
+        <li><a href="#" data-text="About"><img src="img/img2.jpg">About</a></li>
+        <li><a href="#" data-text="Services"><img src="img/img3.jpg">Services</a></li>
+        <li><a href="#" data-text="Portfolio"><img src="img/img4.jpg">Portfolio</a></li>
+        <li><a href="#" data-text="Team"><img src="img/img5.jpg">Team</a></li>
+        <li><a href="#" data-text="Contact"><img src="img/img6.jpg">Contact</a></li>
+        <div class="cursor"></div>
+    </ul>
+    
+
+    <script>
+        let cursor = document.querySelector('.cursor');
+        document.addEventListener("mousemove", e => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
+    </script>
+    
+</body>
+</html>
