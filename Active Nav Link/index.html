@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible"  content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Sliding Menu Indicator</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#team">Team</a>
+        <a href="#contact">Contact</a>
+        <div id="marker"></div> <!--div cu id-ul `marker`, care reprezinta indicatorul animat de sub meniu.-->
+    </nav>
+
+    <script>
+        let marker = document.querySelector('#marker'); /* variabilă `marker` care referențiază elementul cu id-ul `marker`.*/
+        let item = document.querySelectorAll('nav a');/* variabilă `item` care reprezintă o listă de toate elementele `<a>` din interiorul elementului `<nav>`.*/
+
+        function Indicator(e){ /*se definește o funcție numită `Indicator` care primește un argument `e` (eveniment).*/
+            marker.style.left = e.offsetLeft+'px'; /*setează stilul markerului pentru a ajusta poziția sa la stânga în funcție de poziția elementului `<a>` care a fost apăsat.*/
+            marker.style.width = e.offsetWidth+'px'; /*setează stilul markerului pentru a ajusta lățimea sa în funcție de lățimea elementului `<a>` care a fost apăsat.*/
+        }
+
+        item.forEach(link =>{ /*parcurge fiecare element `<a>` din lista `item`.*/
+            link.addEventListener('click', (e) => { /*Se adaugă un eveniment de click la fiecare element `<a>`. Când un link este apăsat, se apelează funcția `Indicator` cu elementul `<a>` respectiv ca argument (`e.target`).*/
+                Indicator(e.target);
+            })
+        })
+
+    </script>
+</body>
+</html>
