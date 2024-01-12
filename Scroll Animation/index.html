@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Scroll To See Magic</title>
+</head>
+<body>
+    <h2 class="title">Forest</h2>
+    <section>
+        <h2 class="inner-title">Forest</h2>
+    </section>
+
+    <script>
+        /*Se creează o variabilă `section` care va referenția elementul `<section>` din HTML.
+        `document.querySelector('section')` este o modalitate de a selecta primul element `<section>` din document.*/
+        let section = document.querySelector('section');
+        /*Se adaugă un eveniment ascultător pe fereastra browserului. Acesta ascultă evenimentul de scroll,
+         iar funcția anonimă asociată este apelată când are loc acest eveniment.*/
+        window.addEventListener('scroll', function(){
+            let value = window.scrollY; /*Se obține valoarea de derulare verticală a paginii și se stochează în variabila `value`.*/
+            section.style.clipPath = "circle(" + value * 2 + "px at left center)"; /*Se modifică stilul elementului `<section>` prin adăugarea unei proprietăți `clipPath`. Această proprietate creează un efect de decupare a secțiunii cu o formă circulară, iar dimensiunea cercului crește odată cu derularea verticală (`value * 2`). 
+                Decuparea are loc în stânga centrului secțiunii.*/
+        })
+    </script>
+</body>
+</html>
