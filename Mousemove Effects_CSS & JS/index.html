@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>CSS & Javascript Effects</title>
+</head>
+<body>
+    <div id="container"></div>
+    <div id="cursor"></div>
+    <script>
+        /* Un ciclu `for` care se execută de la 0 la 149. 
+        În fiecare iterație, se creează un element `span` nou și este adăugat
+        în interiorul div-ului cu id-ul `container`. */
+        for(var i = 0; i < 150; i++){
+            let box = document.createElement('span');
+            document.getElementById('container').appendChild(box);        
+        }
+        let cursor = document.getElementById('cursor'); /*Se creează o variabilă `cursor` care referențiază elementul cu id-ul `cursor`.*/
+        /*Se atasează un eveniment `onmousemove` la fereastra browserului. 
+        Când mouse-ul se mișcă, funcția anonimă asociată este apelată.*/
+        window.onmousemove = function(e){ 
+            cursor.style.left = e.clientX + 'px'; /*Actualizează stilul elementului `cursor`, setând coordonata stânga a cursorului la coordonata X a evenimentului mouse-ului.*/
+            cursor.style.top = e.clientY + 'px';  /*Actualizează stilul elementului `cursor`, setând coordonata de sus a cursorului la coordonata Y a evenimentului mouse-ului.*/
+        }
+    </script>
+</body>
+</html>
